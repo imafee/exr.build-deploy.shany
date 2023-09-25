@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple</title>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <button id="btn">click</button>
+    <script type="module">
+      import { ajax } from "./utils.js";
+
+      const elmBtn = document.getElementById("btn");
+      elmBtn.addEventListener("click", (e) => {
+        ajax(
+          "GET",
+          "http://localhost:3001?name=imafee&age=18",
+          (response) => console.log(response),
+          (status) => console.log(status)
+        );
+      });
+    </script>
+  </body>
+</html>
